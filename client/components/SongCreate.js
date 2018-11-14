@@ -3,9 +3,9 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import { Link, hashHistory } from 'react-router';
 
-import query from '../queries/fetchTodos'
+import query from '../queries/fetchSongs'
 
-class TodoCreate extends Component {
+class SongCreate extends Component {
   constructor(props) {
     super(props)
     {
@@ -34,9 +34,9 @@ class TodoCreate extends Component {
     return (
       <div>
         <Link to='/'>Back</Link>
-        <h3>Create new todo</h3>
+        <h3>Create new Song</h3>
         <form onSubmit={this.state.onSubmit}>
-          <label>New todo item</label>
+          <label>New song</label>
           <input
             onChange={e => this.setState({ todoItem: e.target.value })}
             value={this.state.todoItem}
@@ -55,4 +55,4 @@ const mutation = gql`
   }
 `;
 
-export default graphql(mutation)(TodoCreate);
+export default graphql(mutation)(SongCreate);

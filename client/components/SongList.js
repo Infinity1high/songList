@@ -3,10 +3,10 @@ import { graphql } from 'react-apollo';
 import { Link } from 'react-router';
 import gql from 'graphql-tag'
 
-import query from '../queries/fetchTodos'
+import query from '../queries/fetchSongs'
 import Checkbox from '../common/Checkbox'
 
-class TodoList extends Component {
+class SongList extends Component {
 
   constructor(props) {
     super(props);
@@ -76,7 +76,7 @@ class TodoList extends Component {
           Remove selected
           <i className="material-icons">delete</i>
         </button>
-        <Link to={'/todo/new'}
+        <Link to={'/songs/new'}
           className="btn-floating btn-large red right"
         >
           <i className="material-icons">add</i>
@@ -95,5 +95,5 @@ mutation DeleteSong($id: ID) {
 `;
 
 export default  graphql(mutation)(
-  graphql(query)(TodoList)
+  graphql(query)(SongList)
 );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Checkbox extends Component {
 
@@ -38,8 +39,12 @@ class Checkbox extends Component {
             checked={isChecked}
             onChange={this.toggleCheckboxChange}
           />
+          <span>
+            <Link to={`songs/${id}`}>
+              {title}
+            </Link>
+          </span>
 
-          <span>{title}</span>
         </label>
         <i
           className="material-icons"
